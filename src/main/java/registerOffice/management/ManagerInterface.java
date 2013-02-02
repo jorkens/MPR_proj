@@ -2,7 +2,7 @@ package registerOffice.management;
 
 import java.util.List;
 
-import registerOffice.businessObjects.persons.Person;
+import registerOffice.businessObjects.clients.Driver;
 import registerOffice.management.conditions.Condition;
 
 public interface ManagerInterface<TEntity> {

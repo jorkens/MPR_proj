@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.hibernate.Session;
 
-import registerOffice.businessObjects.persons.Person;
+import registerOffice.businessObjects.clients.Driver;
 
 public class HibernatePersonManager 
-	implements ManagerInterface<Person>{
+	implements ManagerInterface<Driver>{
 
 	Session session;
 	
@@ -17,15 +17,15 @@ public class HibernatePersonManager
 	}
 	
 	@Override
-	public Person get(int id) {
+	public Driver get(int id) {
 		
-		List<Person> result = 
-				session.getNamedQuery("Person.id")
+		List<Driver> result = 
+				session.getNamedQuery("Driver.id")
 					.setInteger("id", id).list();
 		if(result.size()==0)
 			return null;
 		
-		Person returnValue = new Person(
+		Driver returnValue = new Driver(
 				result.get(0).getName(), 
 				result.get(0).getPesel(),
 				result.get(0).getAddress());
@@ -34,15 +34,15 @@ public class HibernatePersonManager
 	}
 
 	@Override
-	public List<Person> getAll() {
-		List<Person> result =
-				session.getNamedQuery("Person.all")
+	public List<Driver> getAll() {
+		List<Driver> result =
+				session.getNamedQuery("Driver.all")
 				.list();
 		return result;
 	}
 
 	@Override
-	public boolean save(Person obj) {
+	public boolean save(Driver obj) {
 		
 		try{
 			session.beginTransaction();
@@ -55,12 +55,12 @@ public class HibernatePersonManager
 	}
 
 	@Override
-	public boolean delete(Person obj) {
+	public boolean delete(Driver obj) {
 		
 		try
 		{
 			session.beginTransaction();
-			session.getNamedQuery("Person.delete")
+			session.getNamedQuery("Driver.delete")
 			.setInteger("id", obj.getId())
 			.executeUpdate();
 			
