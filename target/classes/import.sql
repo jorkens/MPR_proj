@@ -1,0 +1,6 @@
+insert into Osoby(address,imie,pesel) values ('Dluga 1', 'Marek', '3214524')
+insert into Osoby(address,imie,pesel) values ('Dluga 2', 'Wojtek', '654624')
+insert into Osoby(address,imie,pesel) values ('Dluga 3', 'Wojtek', '77574')
+insert into Osoby(address,imie,pesel) values ('Dluga 4', 'Piotrek', '7887624')
+insert into Osoby(address,imie,pesel) values ('Dluga 5', 'Daniel', '663544')
+insert into Osoby(address,imie,pesel) values ('Dluga 6', 'Lukasz', '446544')
